@@ -20,7 +20,6 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
-  private final Joystick driverJoystick = new Joystick(0);
 
   /**
    * This function is run when the robot is first started up and should be used
@@ -98,9 +97,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    double speed = -driverJoystick.getY();
-    double rotation = driverJoystick.getX();
-    m_robotContainer.getDriveTrain().arcadeDrive(speed, rotation);
+    // Remove the manual arcade drive code since it's handled by ArcadeDriveCommand
   }
 
   @Override
