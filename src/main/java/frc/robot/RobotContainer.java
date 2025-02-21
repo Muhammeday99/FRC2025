@@ -18,7 +18,7 @@ public class RobotContainer {
   private final ElevatorSubsystem elevatorSubsystem = new ElevatorSubsystem();
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
 
-  private final Joystick joystick = new Joystick(0);
+  private final Joystick joystick = new Joystick(Constants.OperatorConstants.kJoystickPort);
 
   public RobotContainer() {
       configureBindings();
@@ -31,8 +31,8 @@ public class RobotContainer {
 
   private void configureBindings() {
       // Define controller button bindings here
-      new JoystickButton(joystick, 3).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, 0.5));
-      new JoystickButton(joystick, 4).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, -0.5));
+      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorUpButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, 0.5));
+      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorDownButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, -0.5));
   }
 
   public Command getAutonomousCommand() {

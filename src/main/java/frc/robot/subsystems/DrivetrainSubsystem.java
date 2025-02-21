@@ -9,12 +9,13 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class DrivetrainSubsystem extends SubsystemBase{
-    private final SparkMax leftFrontMotor = new SparkMax(1, MotorType.kBrushed);
-    private final SparkMax leftRearMotor = new SparkMax(2, MotorType.kBrushed);
-    private final SparkMax rightFrontMotor = new SparkMax(3, MotorType.kBrushed);
-    private final SparkMax rightRearMotor = new SparkMax(4, MotorType.kBrushed);
+    private final SparkMax leftFrontMotor = new SparkMax(Constants.SparkMaxConstants.kLeftFrontSparkMaxID, MotorType.kBrushed);
+    private final SparkMax leftRearMotor = new SparkMax(Constants.SparkMaxConstants.kLeftRearSparkMaxID, MotorType.kBrushed);
+    private final SparkMax rightFrontMotor = new SparkMax(Constants.SparkMaxConstants.kRightFrontSparkMaxID, MotorType.kBrushed);
+    private final SparkMax rightRearMotor = new SparkMax(Constants.SparkMaxConstants.kRightRearSparkMaxID, MotorType.kBrushed);
     SparkMaxConfig configLeft = new SparkMaxConfig();
     SparkMaxConfig configRightLeader = new SparkMaxConfig();
     SparkMaxConfig configRightFollower = new SparkMaxConfig();
