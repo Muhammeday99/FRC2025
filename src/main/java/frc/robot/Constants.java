@@ -20,18 +20,10 @@ public final class Constants {
     public static final int kElevatorDownButton = 4;
   }
 
-  public static class MotorConstants {
-    public static final int kLeftFrontMotorPort = 1;
-    public static final int kLeftRearMotorPort = 2;
-    public static final int kRightFrontMotorPort = 3;
-    public static final int kRightRearMotorPort = 4;
-    public static final int kElevatorMotorPort = 5;
-  }
-
   public static class SparkMaxConstants {
     public static final int kLeftFrontSparkMaxID = 1;
-    public static final int kLeftRearSparkMaxID = 2;
-    public static final int kRightFrontSparkMaxID = 3;
+    public static final int kLeftRearSparkMaxID = 3;
+    public static final int kRightFrontSparkMaxID = 7;
     public static final int kRightRearSparkMaxID = 4;
     public static final int kElevatorSparkMaxID = 5;
   }
