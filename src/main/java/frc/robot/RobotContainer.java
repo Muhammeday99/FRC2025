@@ -22,7 +22,10 @@ public class RobotContainer {
 
   public RobotContainer() {
       configureBindings();
-      drivetrainSubsystem.setDefaultCommand(new ArcadeDriveCommand(drivetrainSubsystem, () -> -joystick.getRawAxis(1), () -> joystick.getRawAxis(0)));
+      drivetrainSubsystem.setDefaultCommand(new ArcadeDriveCommand(drivetrainSubsystem, 
+          () -> -joystick.getRawAxis(1), // Left stick Y-axis for forward/backward
+          () -> joystick.getRawAxis(4)   // Right stick X-axis for rotation
+      ));
   }
 
   public DrivetrainSubsystem getDriveTrain(){
