@@ -16,8 +16,9 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
     public static final int kJoystickPort = 0;
-    public static final int kElevatorUpButton = 3;
-    public static final int kElevatorDownButton = 4;
+    public static final int kElevatorUpButton = 4;
+    public static final int kElevatorDownButton = 5;
+    public static final int kShooterDownButton = 1;
   }
 
   public static class SparkMaxConstants {
@@ -25,6 +26,8 @@ public final class Constants {
     public static final int kLeftRearSparkMaxID = 3;
     public static final int kRightFrontSparkMaxID = 7;
     public static final int kRightRearSparkMaxID = 4;
-    public static final int kElevatorSparkMaxID = 5;
+    public static final int kElevatorSparkMaxID = 6;
+    public static final int kElevatorFollowerSparkMaxID = 8;
+    public static final int kShooterSparkMaxID = 9;
   }
 }

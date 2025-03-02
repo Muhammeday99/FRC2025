@@ -21,7 +21,7 @@ public class DrivetrainSubsystem extends SubsystemBase{
     SparkMaxConfig configRightFollower = new SparkMaxConfig();
 
     
-    private final DifferentialDrive driveTrain = new DifferentialDrive(leftFrontMotor, rightFrontMotor);
+    private final DifferentialDrive driveTrain = new DifferentialDrive(leftFrontMotor::set, rightFrontMotor::set);
 
     public DrivetrainSubsystem(){
         configLeft.follow(leftFrontMotor);
@@ -34,7 +34,8 @@ public class DrivetrainSubsystem extends SubsystemBase{
     }
 
     public void setMotors(double leftSpeed, double rightSpeed) {
-        driveTrain.arcadeDrive(leftSpeed, -rightSpeed);
+        driveTrain.setMaxOutput(1);
+        driveTrain.arcadeDrive(-leftSpeed, rightSpeed);
     }
     
     @Override

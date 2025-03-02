@@ -8,15 +8,18 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.ArcadeDriveCommand;
 import frc.robot.commands.DriveForwardCommand;
 import frc.robot.commands.ElevatorJoystickCommand;
+import frc.robot.commands.ShooterCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
 public class RobotContainer {
   
   private final DrivetrainSubsystem drivetrainSubsystem = new DrivetrainSubsystem();
   private final ElevatorSubsystem elevatorSubsystem = new ElevatorSubsystem();
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+  private final ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
 
   private final Joystick joystick = new Joystick(Constants.OperatorConstants.kJoystickPort);
 
@@ -34,8 +37,9 @@ public class RobotContainer {
 
   private void configureBindings() {
       // Define controller button bindings here
-      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorUpButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, 0.5));
-      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorDownButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, -0.5));
+      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorUpButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, 0.2));
+      new JoystickButton(joystick, Constants.OperatorConstants.kElevatorDownButton).whileTrue(new ElevatorJoystickCommand(elevatorSubsystem, -0.2));
+      new JoystickButton(joystick, Constants.OperatorConstants.kShooterDownButton).whileTrue(new ShooterCommand(shooterSubsystem, 0.2));
   }
 
   public Command getAutonomousCommand() {
