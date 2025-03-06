@@ -28,13 +28,13 @@ public class ArcadeDriveCommand extends Command {
 
         m_subsystem.setMotors(realTimeSpeed, realTimeTurn);
 
-        System.out.println("ArcadeDriveCommand execute: " + realTimeSpeed + " " + realTimeTurn);
+        // System.out.println("ArcadeDriveCommand execute: " + realTimeSpeed + " " + realTimeTurn);
     }
 
     @Override
     public void end(boolean interrupted) {
         m_subsystem.setMotors(0, 0);
-        System.out.println("ArcadeDriveCommand ended: " + interrupted);
+        // System.out.println("ArcadeDriveCommand ended: " + interrupted);
     }
 
     @Override

@@ -5,10 +5,8 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import edu.wpi.first.math.controller.PIDController;
 
 public class ElevatorSubsystem extends SubsystemBase {
     private final SparkMax elevatorMotor = new SparkMax(Constants.SparkMaxConstants.kElevatorSparkMaxID, MotorType.kBrushed);
@@ -23,5 +21,6 @@ public class ElevatorSubsystem extends SubsystemBase {
 
     public void setMotors(double speed){
         elevatorMotor.set(speed);
+        elevatorMotorFollower.set(speed);
     }
 }

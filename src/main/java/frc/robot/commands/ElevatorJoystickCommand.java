@@ -12,16 +12,12 @@ public class ElevatorJoystickCommand extends Command {
   private final ElevatorSubsystem m_subsystem;
   private final double speed;
 
-  /**
-   * Creates a new ExampleCommand.
-   *
-   * @param subsystem The subsystem used by this command.
-   */
   public ElevatorJoystickCommand(ElevatorSubsystem subsystem, double speed) {
     this.m_subsystem = subsystem;
     this.speed = speed;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
+    System.out.println("ElevatorJoystickCommand created with speed: " + this.speed);
   }
 
   // Called when the command is initially scheduled.
@@ -33,8 +29,8 @@ public class ElevatorJoystickCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    System.out.println("Executing ElevatorJoystickCommand with speed: " + speed);
     m_subsystem.setMotors(speed);
-    System.out.println("ElevatorJoystickCommand execute: " + speed);
   }
 
   // Called once the command ends or is interrupted.
